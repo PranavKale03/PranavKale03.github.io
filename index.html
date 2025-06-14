@@ -1,11 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pranav Kale</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pranav Kale</title>
+  <style>
+    /* Reset & Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298, #6dd5ed);
+      background-size: 400% 400%;
+      animation: gradientFlow 15s ease infinite;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      max-width: 600px;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 1s ease;
+    }
+
+    .container.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .socials a {
+      text-decoration: none;
+      color: white;
+      font-size: 1.5rem;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 10px 15px;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .socials a:hover {
+      background: rgba(255, 255, 255, 0.4);
+      transform: scale(1.1);
+    }
+  </style>
 </head>
 <body>
-    Radhey Radhey 🙏🏻
+  <div class="container" id="introBox">
+    <h1>Pranav Kale</h1>
+    <p>Hi! I'm a passionate web developer who loves creating beautiful and functional web experiences.</p>
+    <div class="socials">
+      <a href="https://github.com/PranavKale03" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/kale-pranav" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+
+  <script>
+    // Animate content on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('introBox').classList.add('show');
+    });
+  </script>
 </body>
 </html>
